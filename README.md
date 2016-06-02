@@ -1,4 +1,4 @@
-# Too broad or too harsh: analysing the California oex offender registry.
+# Too broad or too harsh: analyzing the California sex offender registry.
 Ana Santos and Saurabh Datar
 
 This is a working title
