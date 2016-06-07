@@ -130,8 +130,25 @@
 	{% include 'partials/footer.html' %}
 
 	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-	<!-- <script src="{{url_for('static', filename='js/highcharts.js')}}"></script> -->
+	<script src="{{url_for('static', filename='js/ca_counties.js')}}"></script>
 	<script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 	<script src="{{url_for('static', filename='js/script.js')}}"></script>
+	<script type="text/javascript">
+		var map = L.map('map', {
+      scrollWheelZoom: false,
+      center: [37.753972, -119.431297],
+      zoom: 6
+    });
+
+    var ca_counties = counties;
+
+    L.tileLayer("http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png", 
+      {
+        attribution: '&copy; Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+        maxZoom: 18
+    }).addTo(map);
+
+    L.geoJson(ca_counties).addTo(map);
+	</script>
 </body>
 </html>
