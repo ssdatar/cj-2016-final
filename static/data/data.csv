@@ -1,0 +1,7 @@
+name,dob,age,ethnicity,gender,offense_code,offense_desc,last_conv,address,lat,lon,category,compliance_status
+Anthony Aaron,09-07-1961,55,Black,Male,288(a),LEWD OR LASCIVIOUS ACTS WITH A CHILD UNDER 14 YEARS OF AGE,,,,,Middle Age,In violation
+Gustavo Acevedo,01-24-1967,49,Hispanic,Male,647.6(a),ANNOY OR MOLEST CHILD UNDER 18 YEARS OF AGE,,"3751 HARRISON STREET, APT # 205, OAKLAND, 94611",37.820832,-122.253162,Middle Age,Compliant
+Joaquin Cruz Aguilar,07-15-1982,34,Hispanic,Male,288(a),LEWD OR LASCIVIOUS ACTS WITH A CHILD UNDER 14 YEARS OF AGE,,,,,Young man,In violation
+Aman Ashraf,04-11-1973,55,Asian Indian,Male,288(a),ATTEMPTED LEWD OR LASCIVIOUS ACTS WITH A CHILD UNDER 14 YEARS OF AGE,,"1786 WICKHAM RD, SAN JOSE, 95132",,,Middle Age,Compliant
+Gregory Joseph Smith,01-09-1970,46,White,Male,290(a)(2),PRIOR CODE: REQUIRED TO REGISTER BASED ON A NON-CALIFORNIA SEX OFFENSE,,"Woodfords, CA 96120",38.776890,-119.822401,Middle Age,NA
+Robert Armas,01-24-1950,66,White,Male,261(a)(2),RAPE BY FORCE OR FEAR,,"12025 CO RD 96, WOODLAND, 95695",38.762790,-121.835749,Old,Compliant

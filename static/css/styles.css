@@ -9,26 +9,28 @@ footer {
   background-color: #e7e7e7;
 }
 
-
 /* Text before form */
 p.intro-text {
   font-size: 1.2em;
   color: #545454;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 /* Form */
 #user-location {
   padding: 1vh 0;
   margin: 1vh 0;
-  text-align: center;
+  /*text-align: center;*/
 }
 
-
-#county-name {
+#county-name, .select {
   width: 200px;
   display: inline-block;
   text-align-last: center; 
+}
+
+#categ-button {
+	margin: 1.0em 0;
 }
 
 #header h1 {

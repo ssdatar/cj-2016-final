@@ -12,79 +12,121 @@
       <p class="big-text text-justify">This website lets you look at data on sex offenders in California counties through various lenses: how long they have been in the registry, how old they are, what their race is, and what crime they've committed.</p>
     </div>	
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <p class="intro-text text-justify">Choose a county to see the list of sex offenders in your county.</p>
       </div>
+    </div> -->
+
+    <div class="row">
+
+    	<div class="col-md-4">
+    		<p class="intro-text text-justify">Choose a county</p>
+
+    		<form id="user-location">
+			    <select class="form-control" id="county-name">
+						<option value="Alameda">Alameda</option>
+						<option value="Alpine">Alpine</option>
+						<option value="Amador">Amador</option>
+						<option value="Butte">Butte</option>
+						<option value="Calaveras">Calaveras</option>
+						<option value="Colusa">Colusa</option>
+						<option value="Contra Costa">Contra Costa</option>
+						<option value="Del Norte">Del Norte</option>
+						<option value="El Dorado">El Dorado</option>
+						<option value="Fresno">Fresno</option>
+						<option value="Glenn">Glenn</option>
+						<option value="Humboldt">Humboldt</option>
+						<option value="Imperial">Imperial</option>
+						<option value="Inyo">Inyo</option>
+						<option value="Kern">Kern</option>
+						<option value="Kings">Kings</option>
+						<option value="Lake">Lake</option>
+						<option value="Lassen">Lassen</option>
+						<option value="Los Angeles">Los Angeles</option>
+						<option value="Madera">Madera</option>
+						<option value="Marin">Marin</option>
+						<option value="Mariposa">Mariposa</option>
+						<option value="Mendocino">Mendocino</option>
+						<option value="Merced">Merced</option>
+						<option value="Modoc">Modoc</option>
+						<option value="Mono">Mono</option>
+						<option value="Monterey">Monterey</option>
+						<option value="Napa">Napa</option>
+						<option value="Nevada">Nevada</option>
+						<option value="Orange">Orange</option>
+						<option value="Placer">Placer</option>
+						<option value="Plumas">Plumas</option>
+						<option value="Riverside">Riverside</option>
+						<option value="Sacramento">Sacramento</option>
+						<option value="San Benito">San Benito</option>
+						<option value="San Bernardino">San Bernardino</option>
+						<option value="San Diego">San Diego</option>
+						<option value="San Francisco">San Francisco</option>
+						<option value="San Joaquin">San Joaquin</option>
+						<option value="San Luis Obispo">San Luis Obispo</option>
+						<option value="San Mateo">San Mateo</option>
+						<option value="Santa Barbara">Santa Barbara</option>
+						<option value="Santa Clara">Santa Clara</option>
+						<option value="Santa Cruz">Santa Cruz</option>
+						<option value="Shasta">Shasta</option>
+						<option value="Sierra">Sierra</option>
+						<option value="Siskiyou">Siskiyou</option>
+						<option value="Solano">Solano</option>
+						<option value="Sonoma">Sonoma</option>
+						<option value="Stanislaus">Stanislaus</option>
+						<option value="Sutter">Sutter</option>
+						<option value="Tehama">Tehama</option>
+						<option value="Trinity">Trinity</option>
+						<option value="Tulare">Tulare</option>
+						<option value="Tuolumne">Tuolumne</option>
+						<option value="Ventura">Ventura</option>
+						<option value="Yolo">Yolo</option>
+						<option value="Yuba">Yuba</option>
+					</select>
+					
+					<input type="submit" id="county-button" class="btn btn-primary" value="Show me" />
+				</form>
+
+				<p class="intro-text">Choose a category</p>
+				<form id="category-input">
+					<select class="form-control select">
+						<option value="minor">Minor</option>
+						<option value="young">Young</option>
+						<option value="middle">Middle age</option>
+						<option value="old">Old</option>
+					</select>
+				  <input type="submit" id="categ-button" class="btn btn-primary" value="Show me" />
+				  </label>
+
+				</form>
+
+				<p class="intro-text">Choose a race</p>
+				<form action="" id="race-input" class="form">
+					<select class="form-control select">
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="hispanic">Hispanic</option>
+						<option value="native american">Native American</option>
+						<option value="asian indian">Asian Indian</option>
+						<option value="asian chinese">Asian</option>
+					</select>
+
+					<input type="submit" id="race-button" class="btn btn-primary" value="Show me" />
+				</form>    		
+    	</div>
+
+    	<div class="col-md-8">
+	    	<div id="map">
+	    		Map will come here
+	    	</div>
+    	</div>
     </div>
 		
-		<form id="user-location">
-	    <select class="form-control" id="county-name">
-				<option value="Alameda">Alameda</option>
-				<option value="Alpine">Alpine</option>
-				<option value="Amador">Amador</option>
-				<option value="Butte">Butte</option>
-				<option value="Calaveras">Calaveras</option>
-				<option value="Colusa">Colusa</option>
-				<option value="Contra Costa">Contra Costa</option>
-				<option value="Del Norte">Del Norte</option>
-				<option value="El Dorado">El Dorado</option>
-				<option value="Fresno">Fresno</option>
-				<option value="Glenn">Glenn</option>
-				<option value="Humboldt">Humboldt</option>
-				<option value="Imperial">Imperial</option>
-				<option value="Inyo">Inyo</option>
-				<option value="Kern">Kern</option>
-				<option value="Kings">Kings</option>
-				<option value="Lake">Lake</option>
-				<option value="Lassen">Lassen</option>
-				<option value="Los Angeles">Los Angeles</option>
-				<option value="Madera">Madera</option>
-				<option value="Marin">Marin</option>
-				<option value="Mariposa">Mariposa</option>
-				<option value="Mendocino">Mendocino</option>
-				<option value="Merced">Merced</option>
-				<option value="Modoc">Modoc</option>
-				<option value="Mono">Mono</option>
-				<option value="Monterey">Monterey</option>
-				<option value="Napa">Napa</option>
-				<option value="Nevada">Nevada</option>
-				<option value="Orange">Orange</option>
-				<option value="Placer">Placer</option>
-				<option value="Plumas">Plumas</option>
-				<option value="Riverside">Riverside</option>
-				<option value="Sacramento">Sacramento</option>
-				<option value="San Benito">San Benito</option>
-				<option value="San Bernardino">San Bernardino</option>
-				<option value="San Diego">San Diego</option>
-				<option value="San Francisco">San Francisco</option>
-				<option value="San Joaquin">San Joaquin</option>
-				<option value="San Luis Obispo">San Luis Obispo</option>
-				<option value="San Mateo">San Mateo</option>
-				<option value="Santa Barbara">Santa Barbara</option>
-				<option value="Santa Clara">Santa Clara</option>
-				<option value="Santa Cruz">Santa Cruz</option>
-				<option value="Shasta">Shasta</option>
-				<option value="Sierra">Sierra</option>
-				<option value="Siskiyou">Siskiyou</option>
-				<option value="Solano">Solano</option>
-				<option value="Sonoma">Sonoma</option>
-				<option value="Stanislaus">Stanislaus</option>
-				<option value="Sutter">Sutter</option>
-				<option value="Tehama">Tehama</option>
-				<option value="Trinity">Trinity</option>
-				<option value="Tulare">Tulare</option>
-				<option value="Tuolumne">Tuolumne</option>
-				<option value="Ventura">Ventura</option>
-				<option value="Yolo">Yolo</option>
-				<option value="Yuba">Yuba</option>
-			</select>
-		</form>
+		
 
 		<div class="container-fluid">
-    	<div id="map">
-    		Map will come here
-    	</div>
+    	
     </div>
 	</div>
 	{% include 'partials/footer.html' %}
