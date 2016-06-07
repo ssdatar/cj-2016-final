@@ -25,6 +25,7 @@
 
     		<form id="user-location" action="{{url_for('results')}}" method="GET">
 			    <select name="county" class="form-control" id="county-name">
+			    	<option value="all">All</option>
 						<option value="Alameda">Alameda</option>
 						<option value="Alpine">Alpine</option>
 						<option value="Amador">Amador</option>
@@ -119,9 +120,7 @@
     	</div>
 
     	<div class="col-md-8">
-	    	<div id="map">
-	    		Map will come here
-	    	</div>
+	    	<div id="map"></div>
     	</div>
     	
     </div>
@@ -148,7 +147,20 @@
         maxZoom: 18
     }).addTo(map);
 
-    L.geoJson(ca_counties).addTo(map);
+    // Add county shape with styles
+    L.geoJson(ca_counties, {style: style}).addTo(map);
+
+    // Function to style the county shapes
+    function style(feature) {
+      return {
+          fillColor: '#99d8c9',
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          dashArray: '3',
+          fillOpacity: 0.7
+      };
+    }
 	</script>
 </body>
 </html>

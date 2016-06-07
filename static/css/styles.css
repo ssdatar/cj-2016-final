@@ -68,3 +68,30 @@ p.big-text {
   margin: 2vh 0;
   float: right;
 }
+
+/* Summary stats panel */
+div.summary {
+  margin-bottom: 3.0em;
+}
+
+p.big {
+  font-size: 5em;
+  font-weight: 700;
+  line-height: 0.8em;
+  color: darkred;
+}
+
+p.subhead {
+  font-size: 1.5em;
+}
+
+.num-wrapper {
+  display: inline-block;
+  width: 30%;
+}
+
+.chart {
+  width: 100%;
+  height: 400px;
+  margin: 4em 0 2em 0;
+}

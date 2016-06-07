@@ -9,10 +9,15 @@ def get_data():
     data = list(csv.DictReader(r))
   return data
 
+# Return data based on parameters chosen
 def get_filtered_data(data, filters):
   temp = data
   filters = filters
-  f1 = [d for d in temp if d['county'] == filters[0]]
+
+  f1 = temp
+
+  if filters[0] != 'all': 
+    f1 = [d for d in temp if d['county'] == filters[0]]
   
   if filters[1] != 'all':
     f1 = [d for d in f1 if d['category'] == filters[1]]

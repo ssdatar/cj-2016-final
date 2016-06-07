@@ -8,8 +8,41 @@
     <div class="row">
       <div class="col-md-6">
         <p class="intro-text">You searched for sex offenders in {{ results[0]['county'] }} county with category "{{ f[1] }}" and ethnicity "{{ f[2] }}".</p>
+
+        <!-- Summary statistics -->
+        <div id="stats-panel">          
+          <div class="summary" id="total">
+            <p class="big" id="total-num">{{results|length}}</p>
+            <p class="subhead" id="total-sub">total sex offenders</p> 
+          </div>
+
+          <div id="highest" class="summary">
+            
+            <div class="num-wrapper">
+              <p class="big" id="race-1"></p> 
+              <p class="subhead" id="race-sub1">Black offenders</p>
+            </div>  
+
+            <div class="num-wrapper">
+              <p class="big" id="race-2"></p> 
+              <p class="subhead" id="race-sub2">Hispanic</p>
+            </div>  
+
+            <div class="num-wrapper">
+              <p class="big" id="race-3"></p> 
+              <p class="subhead" id="race-sub3"></p>
+            </div>
+                                 
+          </div>
+
+          <div id="second" class="summary">
+            <p class="big" id="second-num"></p> 
+            <p class="subhead" id="second-sub"></p>                       
+          </div>
+        </div>
       </div>
       
+      <!-- Map of chosen sex offenders -->
       <div class="col-md-6">
         <div id="result-map"></div>
       </div>
@@ -19,11 +52,11 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div id="chart-1"></div>
+        <div id="chart-1" class="chart"></div>
       </div>
 
       <div class="col-md-6">
-        <div id="chart-2"></div>
+        <div id="chart-2" class="chart"></div>
       </div>
     </div>
 
@@ -61,15 +94,26 @@
   <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/highcharts.js')}}"></script>
   <script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
   <script src="{{url_for('static', filename='js/ca_counties.js')}}"></script>
 
   <script type="text/javascript">
-
+  $(document).ready(function() { 
     var data = {{results|tojson}};
 
     var ca_counties = counties;
-    console.log(ca_counties)
+    //console.log(ca_counties)
+
+    var raceBreakup = _.groupBy(data, function(d) { return d.ethnicity; });
+
+    console.log(raceBreakup);
+
+    $("#race-1").text(raceBreakup.Black.length);
+    $("#race-2").text(raceBreakup.Hispanic.length);
+
+    makeChart(data);
 
     var map = L.map('result-map', {
       scrollWheelZoom: false,
@@ -83,8 +127,10 @@
         maxZoom: 18
     }).addTo(map);
 
-    L.geoJson(ca_counties).addTo(map);
+    // Add county shape with styles
+    L.geoJson(ca_counties, {style: style}).addTo(map);
 
+    // Build data for sex offenders
     var data = {
       "type": "FeatureCollection",
       "features": [
@@ -107,6 +153,7 @@
       ]
     };
 
+    // Add the dots
     var geojsonMarkerOptions = {
                       radius: 5,
                       fillColor: "#ff7800",
@@ -126,7 +173,78 @@
                   }
               });
     map.addLayer(dataLayer);
+
     
+    // Function to style the county shapes
+    function style(feature) {
+      return {
+          fillColor: '#99d8c9',
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          dashArray: '3',
+          fillOpacity: 0.7
+      };
+    }
+
+    function makeChart(data) {
+      var chartData = [],
+          categs = [], 
+          group;
+
+      group = _.groupBy(data, function(d) {return d.category; });
+
+      for (var i in group) {
+        categs.push(i);
+        chartData.push(group[i].length);
+      }
+
+      $(function () {
+        $('#chart-1').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Sex offenders by category'
+            },
+            // subtitle: {
+            //     text: 'Source: WorldClimate.com'
+            // },
+            xAxis: {
+                categories: categs
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of sex offenders',
+                    align: 'high'
+                },
+                labels: {
+                  overflow: 'justify'
+                },
+            },
+            credits: {
+              enabled: false
+            },
+            plotOptions: {
+              column: {
+                dataLabels: {
+                    enabled: true
+                }
+              }
+            },
+            series: [{
+              name: 'Category',
+              data: chartData
+            }]
+          });
+        });
+
+
+    }
+
+
+  });
 
   </script>
 </body>
