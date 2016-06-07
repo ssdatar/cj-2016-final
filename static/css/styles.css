@@ -25,12 +25,17 @@ p.intro-text {
 
 #county-name, .select {
   width: 200px;
-  display: inline-block;
+  /*display: inline-block;*/
   text-align-last: center; 
 }
 
 #categ-button {
-	margin: 1.0em 0;
+  margin: 1.0em 0;
+}
+
+#form-button {
+  display: block;
+  margin: 2vh 0;
 }
 
 #header h1 {
@@ -53,4 +58,13 @@ p.big-text {
   height: 400px;
   text-align: center;
   background-color: #d3d3d3;
+}
+
+#result-map {
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  background-color: #d3d3d3;
+  margin: 2vh 0;
+  float: right;
 }

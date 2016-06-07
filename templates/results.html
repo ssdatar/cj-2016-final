@@ -1,0 +1,132 @@
+{% include 'partials/head.html' %}
+
+<body>
+  <div class="container">
+
+    <h1 class="text-center">Sex offenders in {{results[0]['county']}} county</h1>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <p class="intro-text">You searched for sex offenders in {{ results[0]['county'] }} county with category "{{ f[1] }}" and ethnicity "{{ f[2] }}".</p>
+      </div>
+      
+      <div class="col-md-6">
+        <div id="result-map"></div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <div id="chart-1"></div>
+      </div>
+
+      <div class="col-md-6">
+        <div id="chart-2"></div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-condensed table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Ethnicity</th>
+            <th>Category</th>
+            <th>Offense</th>
+            <th>Compliance status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in results %}
+            <tr>
+              <td>{{ r.name }}</td>
+              <td>{{ r.age }}</td>
+              <td>{{ r.gender }}</td>
+              <td>{{ r.ethnicity }}</td>
+              <td>{{ r.category }}</td>
+              <td>{{ r.offense_desc }}</td>
+              <td>{{ r.compliance_status }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/highcharts.js')}}"></script>
+  <script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  <script src="{{url_for('static', filename='js/ca_counties.js')}}"></script>
+
+  <script type="text/javascript">
+
+    var data = {{results|tojson}};
+
+    var ca_counties = counties;
+    console.log(ca_counties)
+
+    var map = L.map('result-map', {
+      scrollWheelZoom: false,
+      center: [37.753972, -119.431297],
+      zoom: 6
+    });
+
+    L.tileLayer("http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png", 
+      {
+        attribution: '&copy; Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+        maxZoom: 18
+    }).addTo(map);
+
+    L.geoJson(ca_counties).addTo(map);
+
+    var data = {
+      "type": "FeatureCollection",
+      "features": [
+        {% for obj in results %}
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "{{ obj.name }}",
+            "age": "{{ obj.age }}",
+            "race": "{{ obj.ethnicity }}",
+            "offense": "{{ obj.offense_desc }}",
+            "status": "{{ obj.compliance_status }}"
+          },
+          "geometry": {
+                      "type": "Point",
+                      "coordinates": [{{ obj.lon }}, {{ obj.lat }}]
+                    }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    };
+
+    var geojsonMarkerOptions = {
+                      radius: 5,
+                      fillColor: "#ff7800",
+                      color: "#fff",
+                      weight: 1,
+                      opacity: .7,
+                      fillOpacity: 0.7
+                  };
+
+    var dataLayer = L.geoJson(data, {
+                pointToLayer: function (feature, latlng) {
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                },
+                onEachFeature: function(feature, layer) {
+                  //Info shown on map popup
+                  layer.bindPopup('<strong>' + feature.properties.name + '</strong>' + '<br> Age: ' + feature.properties.age + '<br> Race: ' + feature.properties.race + '<br>Offense: ' + feature.properties.offense);
+                  }
+              });
+  map.addLayer(dataLayer);
+    
+
+  </script>
+</body>
