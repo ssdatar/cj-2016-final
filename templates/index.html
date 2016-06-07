@@ -5,13 +5,13 @@
 
 		<div id="header">
       <h1 class="text-center">Sex offenders in California</h1>
-      <h3 class="text-center">Too broad or too harsh?</h3>
+      <!-- <h3 class="text-center">Too broad or too harsh?</h3> -->
     </div>
 
     <div id="big-wrapper">
       <p class="big-text text-justify">This website lets you look at data on sex offenders in California counties through various lenses: how long they have been in the registry, how old they are, what their race is, and what crime they've committed. You can use the menu below to choose different filters.</p>
 
-      <p class="big-text text-justify">The categories are groupings by age: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above).</p>
+      <p class="big-text text-justify">The categories are groupings by age: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). Ethnicities are as reported by the sex offender registry maintained by the <a href="http://www.meganslaw.ca.gov/search_main.aspx">California State Department of Justice</a>. The income data comes from the <a href="http://www.census.gov/did/www/saipe/data/statecounty/data/2014.html">US Census</a>.</p>
     </div>	
 
     <!-- <div class="row">
@@ -133,6 +133,7 @@
 	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
 	<script src="{{url_for('static', filename='js/ca_counties.js')}}"></script>
 	<script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="{{url_for('static', filename='js/script.js')}}"></script>
 	<script type="text/javascript">
 		var map = L.map('map', {
@@ -142,6 +143,32 @@
     });
 
     var ca_counties = counties;
+    var countyIncome = {{ c|tojson }};
+
+    ca_counties.features.forEach(function(d) {
+    	countyIncome.forEach(function(c) {
+    		if(c.county == d.properties.name) {
+    			d.properties.income = c.median_household_income;
+    		}
+    	});
+    });
+
+    var incomeRange = d3.extent(ca_counties.features, function(d) {
+    	return +d.properties.income;
+    });
+
+    console.log(incomeRange)
+
+    var colorRange = ['#FFEDA0','#FC4E2A','#800026'];
+
+    var colorScale = d3.scale.linear()
+    .domain(incomeRange)
+    .range(colorRange);
+
+  //   console.log(incomeRange);
+
+		// console.log(ca_counties);
+    //console.log(countyIncome);
 
     L.tileLayer("http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png", 
       {
@@ -155,7 +182,7 @@
     // Function to style the county shapes
     function style(feature) {
       return {
-          fillColor: '#99d8c9',
+          fillColor: colorScale(+feature.properties.income),
           weight: 2,
           opacity: 1,
           color: 'white',

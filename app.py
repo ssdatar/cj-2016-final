@@ -32,11 +32,16 @@ def get_filtered_data(data, filters):
 @app.route("/")
 def home():
   template = 'index.html'
-  return render_template(template)
+
+  with open('static/data/county_income.csv', 'r') as r:
+    counties = list(csv.DictReader(r))
+  return render_template(template, c=counties)
 
 # Results page
 @app.route("/results")
 def results():
+  with open('static/data/county_income.csv', 'r') as r:
+    counties = list(csv.DictReader(r))
   args = request.args
   _county = request.args.get('county')
   _categ = request.args.get('categ-name')
@@ -62,7 +67,7 @@ def results():
     row['offense_desc'] = row['offense_desc'].lower().capitalize()
 
   template = 'results.html'
-  return render_template(template, results=filtered_data, f=filters)
+  return render_template(template, results=filtered_data, f=filters, c=counties)
 
 if __name__ == '__main__':
   app.run(debug=True, use_reloader=True)

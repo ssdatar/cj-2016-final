@@ -1,0 +1,59 @@
+County_FIPS_Code,county,median_household_income
+001,Alameda,76996
+003,Alpine,53003
+005,Amador,54610
+007,Butte,42302
+009,Calaveras,53321
+011,Colusa,48006
+013,Contra Costa,80338
+015,Del Norte,41419
+017,El Dorado,70235
+019,Fresno,43338
+021,Glenn,43755
+023,Humboldt,40581
+025,Imperial,38737
+027,Inyo,49267
+029,Kern,47451
+031,Kings,44490
+033,Lake,36333
+035,Lassen,49995
+037,Los Angeles,55686
+039,Madera,43171
+041,Marin,94549
+043,Mariposa,47781
+045,Mendocino,42840
+047,Merced,43818
+049,Modoc,39172
+051,Mono,59181
+053,Monterey,57428
+055,Napa,71063
+057,Nevada,57118
+059,Orange,76061
+061,Placer,75689
+063,Plumas,47964
+065,Riverside,56877
+067,Sacramento,55803
+069,San Benito,68166
+071,San Bernardino,51951
+073,San Diego,66034
+075,San Francisco,83788
+077,San Joaquin,51527
+079,San Luis Obispo,61775
+081,San Mateo,100806
+083,Santa Barbara,62116
+085,Santa Clara,97219
+087,Santa Cruz,64257
+089,Shasta,43661
+091,Sierra,47293
+093,Siskiyou,38641
+095,Solano,67106
+097,Sonoma,66949
+099,Stanislaus,50917
+101,Sutter,51827
+103,Tehama,40782
+105,Trinity,34961
+107,Tulare,42360
+109,Tuolumne,49476
+111,Ventura,74967
+113,Yolo,54509
+115,Yuba,41403
