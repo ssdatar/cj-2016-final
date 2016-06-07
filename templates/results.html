@@ -3,7 +3,7 @@
 <body>
   <div class="container">
 
-    <h1 class="text-center">Sex offenders in {{results[0]['county']}} county</h1>
+    <h1 class="text-center" id="">Sex offenders in {{results[0]['county']}} county</h1>
     
     <div class="row">
       <div class="col-md-6">
@@ -105,6 +105,7 @@
     //$("#race-2").text(raceBreakup.Hispanic.length);
 
     makeCategChart(data);
+    makeRaceChart(data);
 
 
     var map = L.map('result-map', {
@@ -179,6 +180,7 @@
       };
     }
 
+    // Make chart for categories of sex offenders
     function makeCategChart(data) {
       var chartData = [],
           categs = [], 
@@ -232,6 +234,62 @@
           });
         });
     }
+
+    // Make chart for categories of sex offenders
+    function makeRaceChart(data) {
+      var chartData = [],
+          categs = [], 
+          group;
+
+      group = _.groupBy(data, function(d) {return d.ethnicity; });
+
+      for (var i in group) {
+        categs.push(i);
+        chartData.push(group[i].length);
+      }
+
+      $(function () {
+        $('#chart-2').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Sex offenders by ethnicity'
+            },
+            // subtitle: {
+            //     text: 'Source: WorldClimate.com'
+            // },
+            xAxis: {
+                categories: categs
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of sex offenders',
+                    align: 'high'
+                },
+                labels: {
+                  overflow: 'justify'
+                },
+            },
+            credits: {
+              enabled: false
+            },
+            plotOptions: {
+              column: {
+                dataLabels: {
+                    enabled: true
+                }
+              }
+            },
+            series: [{
+              name: 'Ethnicity',
+              data: chartData
+            }]
+          });
+        });
+    }
+
 
 
 
