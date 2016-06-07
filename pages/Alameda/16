@@ -1,0 +1,43 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>Search California Registered Sex Offenders- California Dept. of Justice - Office of the Attorney General</TITLE>
+<META content="Registered Sex Offenders - Megan's Law - California Dept. of Justice - Office of the Attorney General arms the public with certain information on the whereabouts of dangerous sex offenders so that local communities may protect themselves and their children. The law also authorizes local law enforcement to notify the public about high-risk and serious sex offenders who reside in, are employed in, or frequent the community." name="description">
+<META content="Megan,Megans Law,Megan's,Megan'sLaw,Megan,Law,Megan Law,Megans,Megans Law,Megan's,Megan's Law,Obtain,Information,FAQs,frequently,asked,question,Protect,Yourself,Family,Testimonials,Work,Sex,Offender,Registration,Publications,California,State,Office,Department,Justice,Attorney General,Publication" name="keywords">
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><LINK href="doj.css" type="text/css" rel="stylesheet">
+</HEAD>
+<BODY topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF">
+	<FORM method="POST" action="CountyMap.htm">
+		<TABLE cellspacing="0" cellpadding="0" width="100%" border="0">
+			<TBODY>
+				<TR valign="top">
+					<TD width="*" height="60"><a href="http://ag.ca.gov/"><img src="../images/agMegan.gif" border="0" alt="Office of the Attorney General - Megan's Law">
+                      </a>
+					</TD>
+					<TD align="right">
+                      <a href="contact.htm"><img border="0" src="../images/ENGLISHReport.jpg"></a>
+					</TD>
+					<TD align="right">
+                      <p align="center"><a href="MeganSearchTips.pdf"><img src="../images/ENGLISHhelp.jpg" alt="Help" border="0"></a>&nbsp;</p>
+					</TD>
+					<TD align="right">
+                      <a href="index.htm"><img border="0" src="../images/ENGLISHMegansHome.gif"></a>
+					</TD>
+				</TR>
+		</TABLE>
+				<TABLE cellspacing="0" cellpadding="7" width="100%" border="0">
+				<TR valign="top">
+					<TD align="center">Your session has expired. Please <a href="../HomePage.aspx">start over.</a>
+                      </TD>
+				</TR>
+				<!-- <tr><td colspan="3"><font face="Arial" size="2" color="#ff0000"><strong>This website displays listing and may include exact or general locations of registered sex offenders classified as either <a href="category.htm">Full address</a> or <a href="category.htm">ZIP code only</a> who live within California.</strong></font></td></tr> -->
+		</TABLE>	<!-- END BOTTOM GLOBAL NAVIGATION -->
+	</FORM>
+    <hr>
+<font face="Arial" size="2">
+ <a href="http://ag.ca.gov/"> Office of the Attorney General</a> | <a href="../index.htm">Megan's
+    Law</a> | <a href="../disclaimer.htm">Disclaimer</a>  </font>
+</BODY>
+</HTML>
+

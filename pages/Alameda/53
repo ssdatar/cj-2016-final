@@ -1,0 +1,767 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title>California's Registered Sex Offender Search Results Page</title>
+    <meta name="keywords" content="Sex offender, sex crime, sex offender tracking, sex offender maps, sex offender locations, California sex offender list" />
+    <meta name="description" content="Online sex offender tracking application for Los Angeles County, California. Developed by ProMiles Software" />
+<script type="text/javascript">
+    function OpenDetail(theID) {
+        thePage = "prosoma.dll?w6=301329&searchby=offender&id=" + theID
+
+        window.open(thePage, 'OffenderDetail', 'width=700,height=520,resizable=yes,scrollbars=yes');
+    }
+    var theNewsWin = null;
+
+    function newsWin(theNewsUrl) {
+
+        if (theNewsWin != null) {
+            // The following line may be used to test that the variable is being set correctly.
+            //alert("Closed Window!");
+            theNewsWin.close();
+        }
+
+
+        var theNewsWin = window.open(theNewsUrl, "DetailInfo", "scrollbars=yes,resizable=yes,HEIGHT=350,WIDTH=200,status=no,toolbar=yes,directories=no,menubar=no,location=no");
+    }
+
+    var theWin = null;
+
+    function definitionWin(theUrl) {
+
+        if (theWin != null) {
+            // The following line may be used to test that the variable is being set correctly.
+            alert("Closed Window!");
+            theWin.close();
+        }
+    }
+</script>
+
+ <link rel="stylesheet" href="../doj.css" type="text/css"/>
+ <style type="text/css">
+    a {
+        color:#336699;
+    }
+</style>
+</head>
+
+<body style="margin:0px;padding:0px;background-color=#FFFFFF">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tbody>
+    <tr valign="top">
+      <td width="*" height="60"><a href="http://ag.ca.gov/"><img src="../images/agMegan.gif" border="0" alt="Office of the Attorney General - Megan's Law" /></a></td>
+      <td align="right">
+        <a href="../contact.aspx"><img src="../images/Report.jpg" border="0" width="90" height="60" alt="Report"/></a>
+      </td>
+      <td align="right">
+        <p align="center"><a href="../MeganSearchTips.pdf"><img src="../images/help.jpg" alt="Help" border="0" width="40" height="60"/></a>&nbsp;</p>
+      </td>
+      <td align="right"><a href="../index.aspx"><img border="0" src="../images/MegansHome.gif" alt="Megans Law Home"/></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<table cellspacing="0" cellpadding="7" width="100%" border="0">
+<tr><td valign="top">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td height="100%" bgcolor="#333333" valign="top" width="144">
+<!-- END LOCAL NAVIGATION TABLES -->
+          </td>
+            <td width="17">
+                <img src="../images/shim.gif" alt="" width="17" height="1"/>
+            </td>
+            <td width="100%" valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td valign="top">
+                            <a href="javascript: window.open('../violation.htm','iv','width=300,height=300');void(0)">
+                                <img border="0" src="../images/redcheckmark.gif" width="36" height="35" alt=""/><b>In Violation</b></a>
+                        </td>
+                        <td valign="middle" align="center">
+                            <a href="../search.aspx">
+                                <img src="../images/New_search.gif" border="0" width="124" height="28" alt="New Search"/></a>
+                        </td>
+                        <td align="right" valign="top" style="white-space:none">
+                            <br/>
+                            page <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=1">1</a> &nbsp; <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=52">&lt;&lt;</a> &nbsp;<b>53</b> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=54">54</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=55">55</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=56">56</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=57">57</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=58">58</a> &nbsp;of <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=87">87</a> &nbsp;<br>(1041-1060) of 1736 offenders
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <hr noshade color="#003399" size="4"/>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" width="100%" id="table14" style="border-collapse: collapse" cellpadding="3">
+                    <tr>
+                        <td valign="top" width="100%">
+                            <table border="0" width="100%" cellpadding="4"style="border-collapse: collapse" cellspacing="0">
+                                <tr nowrap align="left" valign="top">
+                                    <th colspan="2">
+                                    </th>
+                                    <!--TH align="center">In Viol.</TH-->
+                                    <th>
+                                        <img src="../images/sort.gif" alt="sort" width="16" height="17" border="0"/><a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=1">Name</a>
+                                    </th>
+                                    <th>
+                                        Address
+                                    </th>
+                                    <th>
+                                        <img src="../images/sort.gif" alt="sort" width="16" height="17" border="0"/><a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=1&PageNo=1">City</a>
+                                    </th>
+                                    <th align="center">
+                                        <img src="../images/sort.gif" alt="sort" width="16" height="17" border="0"/><a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=2&PageNo=1">ZIP</a>
+                                    </th>
+                                    <th>
+                                        <img src="../images/sort.gif" alt="sort" width="16" height="17" border="0"/><a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=3&PageNo=1">County</a>
+                                    </th>
+                                </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18610352Y6055')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18610352Y6055thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18610352Y6055')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MCMASTER,JEFFREY BRYCE</a><br/>
+                        <a href="javascript: OpenDetail('18610352Y6055')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    TRANSIENT 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18699235D4069')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18699235D4069thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18699235D4069')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MCMULLUM,ORTEGA D</a><br/>
+                        <a href="javascript: OpenDetail('18699235D4069')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    Specific address not subject to disclosure<BR> 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('1869536300013')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/1869536300013thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('1869536300013')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MCNEELY,DOCK</a><br/>
+                        <a href="javascript: OpenDetail('1869536300013')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    1969 HARRINGTON ST<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=1869536300013"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    OAKLAND
+                </td>
+                <td align="center">
+                    94601
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18603020H5773')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18603020H5773thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18603020H5773')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MCPHERSON,SJOWN</a><br/>
+                        <a href="javascript: OpenDetail('18603020H5773')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    886 DAVIS ST APT # 307<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18603020H5773"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    SAN LEANDRO
+                </td>
+                <td align="center">
+                    94577
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18697276B2359')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18697276B2359thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18697276B2359')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MCROY,MICHAEL</a><br/>
+                        <a href="javascript: OpenDetail('18697276B2359')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    2309 CHURCH STREET<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18697276B2359"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    OAKLAND
+                </td>
+                <td align="center">
+                    94605
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18600251E4129')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18600251E4129thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18600251E4129')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEDEIROS,MANUEL DOMINOS</a><br/>
+                        <a href="javascript: OpenDetail('18600251E4129')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    6648 MAYHEWS LANDING RD<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18600251E4129"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    NEWARK
+                </td>
+                <td align="center">
+                    94560
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18613040C4506')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18613040C4506thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18613040C4506')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEI,GENG WONE</a><br/>
+                        <a href="javascript: OpenDetail('18613040C4506')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    Specific address not subject to disclosure<BR> 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('1869525000695')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/1869525000695thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    <img border="0" src="../redcheckmark.gif" width="21" height="20">
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('1869525000695')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEJIA,EUSEBIO</a><br/>
+                        <a href="javascript: OpenDetail('1869525000695')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    Specific address not subject to disclosure<BR> 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18605073J5805')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18605073J5805thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18605073J5805')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEJIA,LEO H</a><br/>
+                        <a href="javascript: OpenDetail('18605073J5805')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    30900 TIDEWATER DR<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18605073J5805"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    UNION CITY
+                </td>
+                <td align="center">
+                    94587
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18606011K3375')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18606011K3375thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18606011K3375')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MELGAREJO,JOSE</a><br/>
+                        <a href="javascript: OpenDetail('18606011K3375')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    1034 GILBERT STREET APT # -<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18606011K3375"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    HAYWARD
+                </td>
+                <td align="center">
+                    94545
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('10902297H2027')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/10902297H2027thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('10902297H2027')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MELGOZA,PEDRO BUSTOS</a><br/>
+                        <a href="javascript: OpenDetail('10902297H2027')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    326 PERKINS DR<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=10902297H2027"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    HAYWARD
+                </td>
+                <td align="center">
+                    94541
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18699077C7343')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18699077C7343thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18699077C7343')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MELONZI,FRANK</a><br/>
+                        <a href="javascript: OpenDetail('18699077C7343')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    TRANSIENT 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('49514028D2848')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/49514028D2848thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('49514028D2848')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEMBRENO,PEDRO RAEMON</a><br/>
+                        <a href="javascript: OpenDetail('49514028D2848')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    Specific address not subject to disclosure<BR> 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('11609085M7538')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="../PhotoNotAvailThb.gif" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('11609085M7538')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MENDIOLA,JASONJOHN MARTINEZ</a><br/>
+                        <a href="javascript: OpenDetail('11609085M7538')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    Specific address not subject to disclosure<BR> 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18610174N7329')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18610174N7329thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18610174N7329')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MENDIOLA,JESUS</a><br/>
+                        <a href="javascript: OpenDetail('18610174N7329')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    DEPORTED 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18612101B4827')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="../PhotoNotAvailThb.gif" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    <img border="0" src="../redcheckmark.gif" width="21" height="20">
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18612101B4827')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MENDOZA,SALVADOR</a><br/>
+                        <a href="javascript: OpenDetail('18612101B4827')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    5522 EAST 16TH ST<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=18612101B4827"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    OAKLAND
+                </td>
+                <td align="center">
+                    94621
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('1869529900009')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/1869529900009thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    <img border="0" src="../redcheckmark.gif" width="21" height="20">
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('1869529900009')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEYERS,ANDREW MICHAEL</a><br/>
+                        <a href="javascript: OpenDetail('1869529900009')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    TRANSIENT 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('1869408352600')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/1869408352600thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('1869408352600')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEYERS,THOMAS</a><br/>
+                        <a href="javascript: OpenDetail('1869408352600')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    950 92ND AV APT # 3<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=1869408352600"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    OAKLAND
+                </td>
+                <td align="center">
+                    94603
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" >
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('18610334Y4939')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/18610334Y4939thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('18610334Y4939')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEZA,MICHAEL</a><br/>
+                        <a href="javascript: OpenDetail('18610334Y4939')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    TRANSIENT 
+                </td>
+                <td>
+                    
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+            <tr align="left" style="background-color:#f2f2f2">
+              <!--TD VALIGN="middle"><IMG BORDER="0" SRC="%%111%" WIDTH="10" HEIGHT="10" ALT="Address%%101%Disclosable"></TD-->
+                <td align="center">
+                    <a href="javascript: OpenDetail('1869429003057')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">
+                        <img border="0" src="http://216.223.229.20/maps/1869429003057thb.jpg" width="42" alt=""/></a>
+                </td>
+                <td align="center">
+                    
+                </td>
+                <td>
+                    <a href="javascript: OpenDetail('1869429003057')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;">MEZA,NAPOLEON</a><br/>
+                        <a href="javascript: OpenDetail('1869429003057')" onmouseover="window.status='Open Detail'; return true;"
+                        onmouseout="window.status=''; return true;"  style="color:#993333">More Info</a>
+                </td>
+                <td>
+                    3415 CHESTNUT STREET<BR><A HREF="../Search_main.aspx?searchby=offendermap&id=1869429003057"><span style="color:#993333">Show On Map</span></A> 
+                </td>
+                <td>
+                    OAKLAND
+                </td>
+                <td align="center">
+                    94608
+                </td>
+                <td>
+                    ALAMEDA
+                </td>
+            </tr>
+<!-- %%$SPLIT -->
+          </table>
+          </td>
+        </tr>
+          <tr>
+              <td valign="top">
+                  <hr noshade color="#003399" size="4">
+              </td>
+          </tr>
+          <tr>
+              <td valign="top" align="left">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                          <td valign="top">
+                              <a href="javascript: window.open('../violation.htm','iv','width=300,height=300');void(0)">
+                                  <img border="0" src="../images/redcheckmark.gif" width="36" height="35" alt=""/><b>In Violation</b></a>
+                          </td>
+                          <td valign="middle" align="center">
+                              <a href="../search.aspx">
+                                  <img src="../images/New_search.gif" border="0" width="124" height="28" alt=""/></a>
+                          </td>
+                          <td align="right" valign="top" style="white-space:nowrap">
+                              <br/>
+                              page <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=1">1</a> &nbsp; <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=52">&lt;&lt;</a> &nbsp;<b>53</b> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=54">54</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=55">55</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=56">56</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=57">57</a> &nbsp;<a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=58">58</a> &nbsp;of <a href="prosoma.dll?w6=301329&searchby=CountyList&SelectCounty=ALAMEDA&SB=0&PageNo=87">87</a> &nbsp;<br>(1041-1060) of 1736 offenders
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+      </table>
+          </td>
+            <td valign="top">
+                <p align="center">
+                    <img src="../images/shim.gif" alt width="17" height="1">
+            </td>
+        </tr>
+      </table>
+          </td>
+    </tr>
+    </table>
+
+    <hr/>
+    <font face="Arial" size="2"><a href="http://ag.ca.gov/">Office of the Attorney General</a>
+        | <a href="../index.aspx">Megan's Law</a> | <a href="disclaimer.aspx">Disclaimer</a></font>
+</body>
+</html>
+
