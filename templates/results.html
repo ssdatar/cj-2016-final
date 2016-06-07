@@ -118,7 +118,15 @@
       return +d.properties.income;
     });
 
-    console.log(incomeRange)
+    function getColor(d) {
+      return d > 95000 ? '#800026' :
+             d > 80000  ? '#BD0026' :
+             d > 65000  ? '#E31A1C' :
+             d > 50000  ? '#FEB24C' :
+                          '#FFEDA0';
+    }
+
+    //console.log(incomeRange)
 
     var colorRange = ['#FFEDA0','#FC4E2A','#800026'];
 
@@ -194,7 +202,7 @@
     // Function to style the county shapes
     function style(feature) {
       return {
-          fillColor: colorScale(+feature.properties.income),
+          fillColor: getColor(+feature.properties.income),
           weight: 2,
           opacity: 1,
           color: 'white',
@@ -202,6 +210,24 @@
           fillOpacity: 0.7
       };
     }
+
+    var legend = L.control({position: 'bottomleft'});
+
+    legend.onAdd = function (map) {
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [34000, 50000, 65000, 80000, 95000],
+          labels = [];
+
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + ' $' +
+              grades[i] + ' ' + (grades[i + 1] ? '&ndash;' + ' $' + grades[i + 1] + '<br>' : '+');
+      }
+
+      return div;
+    };
+    legend.addTo(map);
 
     // Make chart for categories of sex offenders
     function makeCategChart(data) {
