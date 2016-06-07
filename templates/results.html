@@ -16,28 +16,17 @@
             <p class="subhead" id="total-sub">total sex offenders</p> 
           </div>
 
-          <div id="highest" class="summary">
-            
+          <div id="compliance" class="summary">
+            {% for d in  results|groupby('compliance_status') %}
             <div class="num-wrapper">
-              <p class="big" id="race-1"></p> 
-              <p class="subhead" id="race-sub1">Black offenders</p>
-            </div>  
-
-            <div class="num-wrapper">
-              <p class="big" id="race-2"></p> 
-              <p class="subhead" id="race-sub2">Hispanic</p>
-            </div>  
-
-            <div class="num-wrapper">
-              <p class="big" id="race-3"></p> 
-              <p class="subhead" id="race-sub3"></p>
+              <p class="big" id="race-1">{{d[1]|length}}</p> 
+              <p class="subhead" id="race-sub1">{{d[0]}}</p>
             </div>
-                                 
+            {% endfor %}
           </div>
 
-          <div id="second" class="summary">
-            <p class="big" id="second-num"></p> 
-            <p class="subhead" id="second-sub"></p>                       
+          <div class="summary" id="race-panel">
+            
           </div>
         </div>
       </div>
@@ -103,17 +92,20 @@
   $(document).ready(function() { 
     var data = {{results|tojson}};
 
+    var d = {{results|groupby('ethnicity')|tojson}};
+
     var ca_counties = counties;
-    //console.log(ca_counties)
+    console.log(d)
 
     var raceBreakup = _.groupBy(data, function(d) { return d.ethnicity; });
 
     console.log(raceBreakup);
 
-    $("#race-1").text(raceBreakup.Black.length);
-    $("#race-2").text(raceBreakup.Hispanic.length);
+    //$("#race-1").text(raceBreakup.Black.length);
+    //$("#race-2").text(raceBreakup.Hispanic.length);
 
-    makeChart(data);
+    makeCategChart(data);
+
 
     var map = L.map('result-map', {
       scrollWheelZoom: false,
@@ -187,7 +179,7 @@
       };
     }
 
-    function makeChart(data) {
+    function makeCategChart(data) {
       var chartData = [],
           categs = [], 
           group;
@@ -239,9 +231,9 @@
             }]
           });
         });
-
-
     }
+
+
 
 
   });
