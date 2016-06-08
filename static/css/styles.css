@@ -4,8 +4,9 @@ body {
 }
 
 footer {
-  padding: 1.2em;
-  margin-top: 1.5em;
+  padding: 3em;
+  padding-bottom: 2em;
+  margin-top: 3em;
   background-color: #e7e7e7;
 }
 
@@ -50,7 +51,7 @@ p.intro-text {
 p.big-text {
   font-size: 1.2em;
   color: #545454;
-  text-align: center;
+  /*text-align: center;*/
   padding: 0 2.0em;
   margin-bottom: 2.0em;
 }
