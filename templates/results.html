@@ -37,7 +37,7 @@
             {% for g in  results|groupby('gender') %}
             <div class="num-wrapper">
               <p class="big" id="gender-1">{{g[1]|length}}</p> 
-              <p class="subhead" id="gender-sub1">{{g[0]}} offenders</p>
+              <p class="subhead" id="gender-sub1">{{g[0]}}</p>
             </div>
             {% endfor %}            
           </div>
