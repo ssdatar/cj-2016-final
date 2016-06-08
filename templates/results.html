@@ -12,22 +12,36 @@
         <!-- Summary statistics -->
         <div id="stats-panel">          
           <div class="summary" id="total">
-            <p class="big" id="total-num">{{results|length}}</p>
-            <p class="subhead" id="total-sub">total sex offenders</p> 
+            <p class="big" id="total-num">{{results|length}}
+              <span id="total-sub">total sex offenders</span>
+            </p>
+            <!-- <p class="subhead" id="total-sub">total sex offenders</p>  -->
           </div>
 
+          <hr>
+
           <div id="compliance" class="summary">
+            <h3 class="summary-head">Compliance status</h3>
             {% for d in  results|groupby('compliance_status') %}
             <div class="num-wrapper">
-              <p class="big" id="race-1">{{d[1]|length}}</p> 
-              <p class="subhead" id="race-sub1">{{d[0]}}</p>
+              <p class="big" id="comp-1">{{d[1]|length}}</p> 
+              <p class="subhead" id="comp-sub1">{{d[0]}}</p>
             </div>
             {% endfor %}
           </div>
 
-          <div class="summary" id="race-panel">
-            
+          <hr>
+
+          <div class="summary" id="gender">
+            <h3 class="summary-head">Gender of offenders</h3>
+            {% for g in  results|groupby('gender') %}
+            <div class="num-wrapper">
+              <p class="big" id="gender-1">{{g[1]|length}}</p> 
+              <p class="subhead" id="gender-sub1">{{g[0]}} offenders</p>
+            </div>
+            {% endfor %}            
           </div>
+
         </div>
       </div>
       
@@ -37,9 +51,8 @@
       </div>
     </div>
 
-
-
     <div class="row">
+      <p class="intro-text">We have classified sex offenders into four categories: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). The chart below shows the distribution of the sex offenders in {{results[0]['county']}} county. You can also see a breakup by ethnicity.</p>
       <div class="col-md-6">
         <div id="chart-1" class="chart"></div>
       </div>

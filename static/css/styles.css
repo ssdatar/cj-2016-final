@@ -74,7 +74,7 @@ p.big-text {
 
 /* Summary stats panel */
 div.summary {
-  margin-bottom: 3.0em;
+  /*margin-bottom: 1.0em;*/
 }
 
 p.big {
@@ -86,6 +86,12 @@ p.big {
 
 p.subhead {
   font-size: 1.5em;
+  color: #535353;
+}
+
+span#total-sub {
+  font-size: 20px;
+  color: #535353;
 }
 
 .num-wrapper {
@@ -96,7 +102,7 @@ p.subhead {
 .chart {
   width: 100%;
   height: 400px;
-  margin: 4em 0 2em 0;
+  margin: 2.0em 0;
 }
 
 .legend {
@@ -131,6 +137,20 @@ p.subhead {
   color: #777;
 }
 
+hr {
+  margin: 0px;
+  padding: 0px;
+}
+
 .top-head {
   margin: 1.2em 0;
+}
+
+#comp-1{
+  color: cadetblue;
+}
+
+.summary-head {
+  padding-bottom: 1em;
+  color: #545454;
 }
