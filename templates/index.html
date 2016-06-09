@@ -123,6 +123,7 @@
           <p class="intro-text">Choose a gender</p>
         <!-- <form action="" id="race-input" class="form"> -->
           <select name="sex" class="form-control select" id="sex-option">
+            <option value="all">All</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="unknown">Unknown</option>
@@ -144,7 +145,7 @@
 
   <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/ca_counties.js')}}"></script>
-  <script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="{{url_for('static', filename='js/leaflet.js')}}"></script>
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
   <script type="text/javascript">
