@@ -28,7 +28,7 @@
 
         <form id="user-location" action="{{url_for('results')}}" method="GET">
           <select name="county" class="form-control" id="county-name">
-            <option value="all">All</option>
+            <!-- <option value="all">All</option> -->
             <option value="Alameda">Alameda</option>
             <option value="Alpine">Alpine</option>
             <option value="Amador">Amador</option>
@@ -118,12 +118,22 @@
           </select>
 
           <!-- <input type="submit" id="race-button" class="btn btn-primary" value="Show me" /> -->
+          
+
+          <p class="intro-text">Choose a gender</p>
+        <!-- <form action="" id="race-input" class="form"> -->
+          <select name="sex" class="form-control select" id="sex-option">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="unknown">Unknown</option>
+          </select>
+
+          <!-- <input type="submit" id="race-button" class="btn btn-primary" value="Show me" /> -->
           <input type="submit" id="form-button" class="btn btn-primary" value="Show me" />
         </form>       
       </div>
 
       <div class="col-md-8">
-        <p>TK: sex offenders on the map with two possible options: draw circles with radius corresponding to number of sex offenders per 1,000 and keep the income layer or remove income layer and shade the counties according to sex offenders per 1,000 in each county</p>
         <div id="map"></div>
       </div>
       
@@ -145,32 +155,28 @@
     });
 
     var ca_counties = counties;
-    var countyIncome = {{ c|tojson }};
+    var offenders = {{ o|tojson }};
 
     ca_counties.features.forEach(function(d) {
-      countyIncome.forEach(function(c) {
+      offenders.forEach(function(c) {
         if(c.county == d.properties.name) {
-          d.properties.income = c.median_household_income;
+          d.properties.off = c.off_rate;
         }
       });
     });
 
-    var incomeRange = d3.extent(ca_counties.features, function(d) {
-      return +d.properties.income;
+    var dataRange = d3.extent(ca_counties.features, function(d) {
+      return +d.properties.off;
     });
 
-    console.log(incomeRange)
+    console.log(dataRange)
 
-    var colorRange = ['#FFEDA0','#FC4E2A','#800026'];
+    var colorRange = ['#FFEDA0','#FEB24C','#E31A1C','#BD0026','800026'];
 
-    var colorScale = d3.scale.linear()
-    .domain(incomeRange)
+    var colorScale = d3.scale.quantize()
+    .domain(dataRange)
     .range(colorRange);
 
-  //   console.log(incomeRange);
-
-    // console.log(ca_counties);
-    //console.log(countyIncome);
 
     L.tileLayer("http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png", 
       {
@@ -184,11 +190,10 @@
     // Function to style the county shapes
     function style(feature) {
       return {
-          fillColor: getColor(+feature.properties.income),
-          weight: 2,
+          fillColor: colorScale(+feature.properties.off),
+          weight: 1,
           opacity: 1,
-          color: 'white',
-          dashArray: '3',
+          color: '#545454',
           fillOpacity: 0.7
       };
     }

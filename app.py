@@ -11,19 +11,19 @@ def get_data():
 
 # Return data based on parameters chosen
 def get_filtered_data(data, filters):
-  temp = data
-  filters = filters
-
-  f1 = temp
+  f1 = data
 
   if filters[0] != 'all': 
-    f1 = [d for d in temp if d['county'] == filters[0]]
+    f1 = [d for d in data if d['county'] == filters[0]]
   
   if filters[1] != 'all':
-    f1 = [d for d in f1 if d['category'] == filters[1]]
+    f1 = [e for e in f1 if e['category'] == filters[1]]
   
   if filters[2] != 'all':
-    f1 = [r for r in f1 if r['ethnicity'] == filters[2]]
+    f1 = [r for r in f1 if r['ethnicity'].lower() == filters[2]]
+
+  if filters[3] != 'all':
+    f1 = [r for r in f1 if r['gender'].lower() == filters[3]]
   return f1
 
 
@@ -33,9 +33,11 @@ def get_filtered_data(data, filters):
 def home():
   template = 'index.html'
 
-  with open('static/data/county_income.csv', 'r') as r:
-    counties = list(csv.DictReader(r))
-  return render_template(template, c=counties)
+  with open('static/data/offender.csv', 'r') as r:
+    off = list(csv.DictReader(r))
+  return render_template(template, o=off)
+
+
 
 # Results page
 @app.route("/results")
@@ -46,8 +48,9 @@ def results():
   _county = request.args.get('county').lower()
   _categ = request.args.get('categ-name')
   _race = request.args.get('ethnicity')
+  _sex = request.args.get('sex')
 
-  filters = [_county,_categ,_race]
+  filters = [_county, _categ, _race, _sex]
 
   if not _county:
     return """
@@ -67,7 +70,7 @@ def results():
     row['Description'] = row['Description'].lower().capitalize()
 
   template = 'results.html'
-  return render_template(template, results=filtered_data, f=filters, c=counties)
+  return render_template(template, results=filtered_data, f=filters, c=counties, county=_county)
 
 if __name__ == '__main__':
   app.run(debug=True, use_reloader=True)
