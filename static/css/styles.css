@@ -86,7 +86,6 @@ p.big {
   font-weight: 700;
   line-height: 0.8em;
   color: darkred;
-
 }
 
 p.subhead {
@@ -167,4 +166,23 @@ hr {
 
 .top-head {
   color: #ff4f2b;
+}
+
+p.map-text {
+  font-size: 1.2em;
+}
+
+.list li {
+  font-size: 1.5em;
+  padding: 0;
+}
+
+p.list-sub {
+  color: #7e7e7e;
+  font-size: 0.8em;
+}
+
+h3.list-head {
+  color: #990033;
+  margin-left: 1.3em;
 }

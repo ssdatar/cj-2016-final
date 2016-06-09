@@ -35,7 +35,9 @@ def home():
 
   with open('static/data/offender.csv', 'r') as r:
     off = list(csv.DictReader(r))
-  return render_template(template, o=off)
+
+  top5 = sorted(off,key=lambda r:float(r['off_rate']),reverse=True)[:5]
+  return render_template(template, o=off,t=top5)
 
 
 

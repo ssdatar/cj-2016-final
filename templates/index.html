@@ -11,7 +11,9 @@
     <div id="big-wrapper">
       <p class="big-text">This website lets you look at data on sex offenders in California counties through various lenses: how long they have been in the registry, how old they are, what their race is, and what crime they've committed. You can use the menu below to choose different filters.</p>
 
-      <p class="big-text">The categories are groupings by age: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). Ethnicities are as reported by the sex offender registry maintained by the <a href="http://www.meganslaw.ca.gov/search_main.aspx">California State Department of Justice</a>. The map shows the county-wise distribution of sex offenders, with a layer of median household income for each county. The income data comes from the <a href="http://www.census.gov/did/www/saipe/data/statecounty/data/2014.html">2014 Small Area and Income Estimates</a> of the US Census.</p>
+      <p class="big-text">The categories are groupings by age: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). Ethnicities are as reported by the sex offender registry maintained by the <a href="http://www.meganslaw.ca.gov/search_main.aspx">California State Department of Justice</a>. The income data comes from the <a href="http://www.census.gov/did/www/saipe/data/statecounty/data/2014.html">2014 Small Area and Income Estimates</a> of the US Census.</p>
+
+      <p class="big-text">California created a sex registry in 1947 as a tracking tool for law enforcement. Today, the list contains over 100,000 registered sex offenders, mainly because California requires all sex offenders, regardless of the type of offense, to register for life. Not all of them are made public: this tool reflects the number of registrants displayed on the Public Megan’s Law website, which does not include the total of registrants that are No Post or Excluded. </p>
 
     </div>  
 
@@ -109,12 +111,25 @@
         <!-- <form action="" id="race-input" class="form"> -->
           <select name="ethnicity" class="form-control select" id="race-option">
             <option value="all">All</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="hispanic">Hispanic</option>
-            <option value="native american">Native American</option>
+            <option value="american indian">American Indian</option>
             <option value="asian indian">Asian Indian</option>
-            <option value="asian chinese">Asian</option>
+            <option value="black">Black</option>
+            <option value="cambodian">Cambodian</option>
+            <option value="chinese">Chinese</option>
+            <option value="filipino">Filipino</option>
+            <option value="guamanian">Guamanian</option>
+            <option value="hawaiian">Hawaiian</option>
+            <option value="hispanic">Hispanic</option>
+            <option value="japanese">Japanese</option>
+            <option value="korean">Korean</option>
+            <option value="laotian">Laotian</option>
+            <option value="other">Other</option>
+            <option value="other asian">Other Asian</option>
+            <option value="pacific islander">Pacific Islander</option>
+            <option value="samoan">Samoan</option>
+            <option value="unknown">Unknown</option>
+            <option value="vietnamese">Vietnamese</option>
+            <option value="white">White</option>
           </select>
 
           <!-- <input type="submit" id="race-button" class="btn btn-primary" value="Show me" /> -->
@@ -131,11 +146,47 @@
 
           <!-- <input type="submit" id="race-button" class="btn btn-primary" value="Show me" /> -->
           <input type="submit" id="form-button" class="btn btn-primary" value="Show me" />
-        </form>       
+        </form> 
+
+        <p class="map-text">The map shows the county-wise population of sex offenders per 1,000 persons. The population data comes from the 2016 estimates of the <a href="http://www.dof.ca.gov/research/demographic/reports/estimates/e-1/view.php">California Department of Finance</a>.</p>
+
+              
       </div>
 
       <div class="col-md-8">
         <div id="map"></div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-6">
+        <h3 class="list-head">Summary statistics</h3>
+        <ul class="list">
+          <li>
+            57,992
+            <p class="list-sub">sex offenders in California</p>
+          </li>
+
+          <li>
+            57,115
+            <p class="list-sub">males</p>
+          </li>
+
+          <li>
+            853
+            <p class="list-sub">females</p>
+          </li>
+        </ul>  
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-6">
+        <h3 class="list-head">Top 5 counties with sex offenders</h3>
+        <ul class="list">
+          {% for d in t %}
+          <li>
+            {{ d.county }}
+            <p class="list-sub">{{ d.off_rate }} per 1,000 people</p>
+          </li>
+          {% endfor %}
+        </ul>  
       </div>
       
     </div>
@@ -170,11 +221,11 @@
       return +d.properties.off;
     });
 
-    console.log(dataRange)
+    console.log(dataRange);
 
     var colorRange = ['#FFEDA0','#FEB24C','#E31A1C','#BD0026','800026'];
 
-    var colorScale = d3.scale.quantize()
+    var colorScale = d3.scale.quantile()
     .domain(dataRange)
     .range(colorRange);
 
@@ -191,7 +242,7 @@
     // Function to style the county shapes
     function style(feature) {
       return {
-          fillColor: colorScale(+feature.properties.off),
+          fillColor: getColor(+feature.properties.off),
           weight: 1,
           opacity: 1,
           color: '#545454',
@@ -200,25 +251,25 @@
     }
 
     function getColor(d) {
-      return d > 95000 ? '#800026' :
-             d > 80000  ? '#BD0026' :
-             d > 65000  ? '#E31A1C' :
-             d > 50000  ? '#FEB24C' :
-                          '#FFEDA0';
+      return d > 3.2 ? '#800026' :
+             d > 2.4  ? '#BD0026' :
+             d > 1.6  ? '#E31A1C' :
+             d > 0.8  ? '#FEB24C' :
+                        '#FFEDA0';
     }
 
     var legend = L.control({position: 'bottomleft'});
 
     legend.onAdd = function (map) {
       var div = L.DomUtil.create('div', 'info legend'),
-          grades = [34000, 50000, 65000, 80000, 95000],
+          grades = [0.02, 0.8, 1.6, 2.4, 3.2],
           labels = [];
 
       // loop through our density intervals and generate a label with a colored square for each interval
       for (var i = 0; i < grades.length; i++) {
           div.innerHTML +=
-              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + ' $' +
-              grades[i] + ' ' + (grades[i + 1] ? '&ndash;' + ' $' + grades[i + 1] + '<br>' : '+');
+              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+              grades[i] + ' ' + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : ' and above');
       }
 
       return div;
