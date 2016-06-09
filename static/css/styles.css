@@ -77,11 +77,16 @@ div.summary {
   /*margin-bottom: 1.0em;*/
 }
 
+div#stats-panel {
+  margin-top: 1.5em;
+}
+
 p.big {
-  font-size: 5em;
+  font-size: 4.4em;
   font-weight: 700;
   line-height: 0.8em;
   color: darkred;
+
 }
 
 p.subhead {
@@ -96,7 +101,7 @@ span#total-sub {
 
 .num-wrapper {
   display: inline-block;
-  width: 30%;
+  width: 32%;
 }
 
 .chart {
@@ -148,6 +153,11 @@ hr {
 
 #comp-1{
   color: cadetblue;
+  margin-right: 3em;
+}
+
+#compliance div.num-wrapper:last-child {
+  margin-left: 8em;
 }
 
 .summary-head {

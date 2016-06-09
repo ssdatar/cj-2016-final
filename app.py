@@ -5,7 +5,7 @@ import csv
 app = Flask(__name__)
 
 def get_data():
-  with open('static/data/data.csv', 'r') as r:
+  with open('static/data/master-2.csv', 'r') as r:
     data = list(csv.DictReader(r))
   return data
 
@@ -43,7 +43,7 @@ def results():
   with open('static/data/county_income.csv', 'r') as r:
     counties = list(csv.DictReader(r))
   args = request.args
-  _county = request.args.get('county')
+  _county = request.args.get('county').lower()
   _categ = request.args.get('categ-name')
   _race = request.args.get('ethnicity')
 
@@ -64,7 +64,7 @@ def results():
       row['lat'] = 0.0
     if not row['lon']:
       row['lon'] = 0.0
-    row['offense_desc'] = row['offense_desc'].lower().capitalize()
+    row['Description'] = row['Description'].lower().capitalize()
 
   template = 'results.html'
   return render_template(template, results=filtered_data, f=filters, c=counties)

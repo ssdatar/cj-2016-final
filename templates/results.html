@@ -3,11 +3,11 @@
 <body>
   <div class="container">
 
-    <h1 class="text-center top-head" id="">Sex offenders in {{results[0]['county']}} county</h1>
+    <h1 class="text-center top-head" id="">Sex offenders in {{results[0].county|capitalize}}</h1>
     
     <div class="row">
       <div class="col-md-6">
-        <p class="intro-text">You searched for sex offenders in {{ results[0]['county'] }} county with category "{{ f[1] }}" and ethnicity "{{ f[2] }}". The adjacent shows the locations of the sex offenders according to what their registry details are. The map also shows the median household income of each county, data for which comes from the <a href="http://www.census.gov/did/www/saipe/data/statecounty/data/2014.html">2014 Small Area Income and Poverty estimates</a> of the US Census.</p>
+        <p class="intro-text">You searched for sex offenders in {{results[0].county}} county with category "{{ f[1] }}" and ethnicity "{{ f[2] }}". The adjacent shows the locations of the sex offenders according to what their registry details are. The map also shows the median household income of each county, data for which comes from the <a href="http://www.census.gov/did/www/saipe/data/statecounty/data/2014.html">2014 Small Area Income and Poverty estimates</a> of the US Census.</p>
 
         <!-- Summary statistics -->
         <div id="stats-panel">          
@@ -25,7 +25,7 @@
             {% for d in  results|groupby('compliance_status') %}
             <div class="num-wrapper">
               <p class="big" id="comp-1">{{d[1]|length}}</p> 
-              <p class="subhead" id="comp-sub1">{{d[0]}}</p>
+              <p class="subhead" id="comp-sub1">{{d[0]|capitalize}}</p>
             </div>
             {% endfor %}
           </div>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="row">
-      <p class="intro-text">We have classified sex offenders into four categories: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). The chart below shows the distribution of the sex offenders in {{results[0]['county']}} county. You can also see a breakup by ethnicity.</p>
+      <p class="intro-text">We have classified sex offenders into four categories: Minor (below 18 years), Young (19 - 39 years), Middle age (40 - 54 years), and Old (55 years and above). The chart below shows the distribution of the sex offenders. You can also see a breakup by ethnicity.</p>
       <div class="col-md-6">
         <div id="chart-1" class="chart"></div>
       </div>
@@ -78,12 +78,12 @@
         <tbody>
           {% for r in results %}
             <tr>
-              <td>{{ r.name }}</td>
+              <td>{{ r.firstname|capitalize }} {{r.lastname|capitalize}}</td>
               <td>{{ r.age }}</td>
-              <td>{{ r.gender }}</td>
-              <td>{{ r.ethnicity }}</td>
+              <td>{{ r.gender|capitalize }}</td>
+              <td>{{ r.ethnicity|capitalize }}</td>
               <td>{{ r.category }}</td>
-              <td>{{ r.offense_desc }}</td>
+              <td>{{ r.Description|capitalize }}</td>
               <td>{{ r.compliance_status }}</td>
             </tr>
           {% endfor %}
